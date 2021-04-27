@@ -1,0 +1,100 @@
+.side-bar{
+ display: flex;
+ /*border: 3px solid black ;*/
+ flex-direction: column;
+ justify-content: space-around;
+ width: 10%;
+ height: 100%;
+ position: absolute;
+ right: 0%;
+ top: 0;
+
+
+}
+/*ODAVDE IDE TO DO LISTA */
+
+.zavrsen{
+        text-decoration: line-through; 
+        opacity: 0.5;
+        margin: 0.5rem;
+        background-color: blanchedalmond;
+        font-size: 1rem;
+        color: black;
+        display: flex;
+        align-items: center;
+        transition: all 1s ease;
+      
+}
+.nije-zavrsen{
+    margin: 0.5rem;
+    font-size: 1rem;
+    color: black;
+    display: flex;
+    background-color: blanchedalmond;
+    align-items: center;
+    transition: all 1s ease;
+  
+}.ime-to-do{
+    width: 80%;
+}
+.trash-btn,
+.complete-btn {
+  background: black;
+  color: white;
+  border: none;
+  padding: 1rem;
+  cursor: pointer;
+  font-size: 1rem;
+}
+.complete-btn {
+  background: rgb(11, 212, 162);
+}
+.main-to-do-container{
+
+
+    display: flex;
+    flex-direction: column;
+    width: 30%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%) ; 
+    justify-content: center;
+    
+}
+
+.input-container{
+    margin: 0.5rem;
+    font-size: 1rem;
+    color: black;
+    display: flex;
+    background-color: blanchedalmond;
+    align-items: center;
+    transition: all 1s ease;
+}
+
+.input-container button {
+    background: black;
+    color: white;
+    border: none;
+    padding: 1rem;
+    cursor: pointer;
+    font-size: 1rem;
+}
+.input-container button:hover {
+  background: #ff6f47;
+  color: white;
+}
+.unos-teksta{
+    width: 90%;
+    font-size: 1rem;
+    height: 46px;
+    outline: none;
+}
+.input-container input:focus{
+    outline: none;
+    text-decoration: none;
+    box-shadow: none;
+}
+
+/*/////////////////////////////////////////////////////////////////////////////////////////////////777*/
