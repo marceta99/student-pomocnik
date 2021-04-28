@@ -1,3 +1,9 @@
+.skloni{
+    visibility: hidden;
+}
+.prikaziii{
+    visibility: visible;
+}
 .side-bar{
  display: flex;
  /*border: 3px solid black ;*/
@@ -98,3 +104,116 @@
 }
 
 /*/////////////////////////////////////////////////////////////////////////////////////////////////777*/
+/*ODAVDE NEDELJNI RASPORED*/
+
+#odmor{
+    background-color: yellow;
+    
+}
+#ucenje{
+    background-color: red;
+}#tv{
+    background-color: orange;
+}#drugari{
+   background-color: green;
+}#posao{
+    background-color: aqua;
+}#teretana{
+    background-color: pink;
+
+}
+.nedeljni-plan-container{
+    height: 50vh;
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-self: center;
+    align-items: center;
+
+}
+h1,h3{
+    margin-bottom: 10px;
+}
+/*task container*/
+.obaveze-container{
+    display: flex;
+    margin-bottom: 3rem;
+    padding: 10px;
+
+}
+.task-container .task-name{
+    padding: 10px;
+    margin: 0 10px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+
+
+
+/*schedule design */
+
+.raspored-container{
+    background: linear-gradient(#ebf3f5, #b5c6e0 );
+    display: flex;
+    flex-direction: column;
+}
+.dani-container{
+    display: flex;
+    
+}
+.corner{
+    width: 50px;
+    height: 70px;
+    margin: 2px;
+}
+.dan{
+    width: 100px;
+    border : solid 1px white  ; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 2px;
+
+}
+.deo-dan{
+    display: flex;
+}
+.vreme{
+width: 50px;
+height: 70px;
+color: white;
+background-color: black;
+text-align: center;
+display: flex;
+justify-content: center;
+align-items: center;
+margin: 2px;
+}
+.obaveza{
+    background-color: white;
+    height: 70px;
+    width: 102px;
+    margin: 2px;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2rem;
+
+}
+
+.zuto{
+    background-color: yellow;
+}
+.crveno{
+    background-color: red;
+}.orange{
+    background-color: orange;
+}.zeleno{
+    background-color: green;
+}.aqua{
+    background-color: aqua;
+}.roze{
+    background-color: pink;
+}

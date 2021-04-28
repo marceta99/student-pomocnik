@@ -3,7 +3,7 @@ import { FaPlusCircle } from 'react-icons/fa';
 
 const ToDoForma = (props) => {
 
-    const {inputText,setInputText,setTodos,todos,setStatus} = props ;
+    const {inputText,setInputText,setTodos,todos} = props ;
 
     const inputHandler = (e)=>{
         console.log(e.target.value) ;
