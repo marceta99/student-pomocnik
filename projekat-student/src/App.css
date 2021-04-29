@@ -287,6 +287,8 @@ a span{
     text-align: center;
     display: flex;
     flex-direction: column;
+    align-items: center;
+    justify-content: center;
     position: absolute;
     left: 10%;
     top: 50%;
@@ -324,7 +326,7 @@ background-color: red;
 border-radius: 50px;
 }
 .tacka{
-width: 0;
+/*width:0;*/
 height: 5px;
 background-color: white;
 border-radius: 50px;
@@ -358,4 +360,10 @@ display: flex;
     font-weight: bold;
     width: 20px;
     height: 20px;
+}
+.vreme{
+
+display: flex;
+flex-direction: row;
+
 }
