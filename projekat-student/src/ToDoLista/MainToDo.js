@@ -12,7 +12,7 @@ const MainToDo = ({prikazToDo}) => {
 */
 
     return(
-        <div className={ (prikazToDo===0) ? "main-to-do-container" : "skloni"}>
+        <div className={ (prikazToDo===1) ? "main-to-do-container" : "skloni"}>
             <ToDoForma inputText={inputText} setInputText={setInputText}
             todos={todos} setTodos={setTodos}></ToDoForma>    
 

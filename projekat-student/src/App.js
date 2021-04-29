@@ -3,6 +3,7 @@ import Dugmad from "./dugmad"  ;
 import MainToDo from './ToDoLista/MainToDo';
 import { useState } from 'react';
 import NedeljniPlan from './plan/NedeljniPlan';
+import Muzika from './muzika/Muzika';
 
 
 
@@ -11,21 +12,23 @@ import NedeljniPlan from './plan/NedeljniPlan';
 
 
 function App() {
- const [prikazToDo,setPrikazToDo] = useState(1) ;  
- const [prikazH1,setPrikazH1] = useState(1) ;  
+ const [prikazToDo,setPrikazToDo] = useState(0) ;  
+ 
+ const [prikazNedeljniPlan,setPrikazNedeljniPlan] = useState(0) ;
  
 
   return (  
     <div className="App">
         
-        <Dugmad prikazToDo= {prikazToDo} setPrikazToDo={setPrikazToDo} prikazH1={prikazH1}
-         setPrikazH1={setPrikazH1}></Dugmad>
+        <Dugmad prikazToDo= {prikazToDo} setPrikazToDo={setPrikazToDo} 
+         prikazNedeljniPlan={prikazNedeljniPlan} setPrikazNedeljniPlan={setPrikazNedeljniPlan}
+         ></Dugmad>
         
         <MainToDo prikazToDo={prikazToDo}></MainToDo>
         
-        <h1 className={prikazH1===1 ?"prikaziii":"skloni"}>MARCETAAAA</h1>
-        
-        <NedeljniPlan></NedeljniPlan>
+        <NedeljniPlan prikazNedeljniPlan={prikazNedeljniPlan}></NedeljniPlan>
+
+        <Muzika></Muzika>
     </div>
   );
 }

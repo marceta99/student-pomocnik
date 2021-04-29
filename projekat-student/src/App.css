@@ -1,3 +1,7 @@
+*{
+ margin: 0;
+ padding: 0;   
+}
 .skloni{
     visibility: hidden;
 }
@@ -8,14 +12,15 @@
  display: flex;
  /*border: 3px solid black ;*/
  flex-direction: column;
- justify-content: space-around;
+ /*justify-content: space-around;*/
  width: 10%;
- height: 100%;
+ height: 80%;
  position: absolute;
- right: 0%;
- top: 0;
-
-
+ right: 2%;
+ top: 10%;
+ background-color: white;
+ border-radius: 10px;
+ box-shadow: 5px 5px 11px black ,-5px -5px 11px black ;
 }
 /*ODAVDE IDE TO DO LISTA */
 
@@ -129,6 +134,12 @@
     flex-direction: column;
     justify-self: center;
     align-items: center;
+    position: absolute;
+    left: 50%;
+    top: 10%;
+    transform: translate(-50%,-50%) ; 
+    margin-top: 10%;
+    text-align: center;
 
 }
 h1,h3{
@@ -216,4 +227,135 @@ margin: 2px;
     background-color: aqua;
 }.roze{
     background-color: pink;
+}
+
+/*////////////////////////////////////////////////////////////////////////*/
+a{
+    position: relative;
+    display: inline-block;
+    /*padding: 15px 30px;*/
+    border: 2px solid black;
+    text-transform: uppercase;
+    color: black;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 15px;
+    margin: 10px;
+    padding: 10%;
+    text-align: center;
+
+
+}
+a:before{
+    content: '';
+    position: absolute;
+    top: 6px;
+    left: -2px;
+    width: calc(100% + 4px);
+    height: calc(100% - 12px);
+    background :#fff;
+    transition: 0.5s ease-in-out;
+    transform: scaleY(1);
+    transition-delay: 0.5s;
+}
+a:hover:before{
+    transform: scaleY(0);
+}
+a:after{
+    content: '';
+    position: absolute;
+    left: 6px;
+    top: -2px;
+    height: calc(100% + 4px);
+    width: calc(100% - 12px);
+    background :#fff;
+    transition: 0.5s ease-in-out;
+    transform: scaleX(1);
+}
+a:hover:after{
+    transform: scaleX(0);
+}
+
+a span{
+    position: relative;
+    z-index: 3;
+}
+
+/*odavde music player ////////////////////////////////////////////////////////*/
+
+.music-container{
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    left: 10%;
+    top: 50%;
+    transform: translate(-50%,-50%) ; 
+    color:white;
+    border-radius: 5px;
+    box-shadow: 1px 1px 30px #111 ,-1px  -1px 30px #111 ;  
+    background-color: black;
+    width: 15%;
+    height: 50%;
+}
+.slika{
+    box-shadow: 1px 1px 15px red ,-1px  -1px 15px red ;
+    width: 50%;
+    border-radius: 50%;
+    margin: 30px auto;
+    transition: all 0.4s ; 
+
+}
+.slika img{
+    border-radius: 10%;
+    height: 100%;
+    width: 100%;
+
+}
+.slika img:hover{
+    box-shadow: 1px 1px 25px red ,-1px  -1px 25px red ;
+    transform: scale(1.03);
+}
+.linija{
+margin :  10px 15px 5px 5px ; 
+width: 90%;
+height: 5px;
+background-color: red;
+border-radius: 50px;
+}
+.tacka{
+width: 0;
+height: 5px;
+background-color: white;
+border-radius: 50px;
+}
+.audio-dugmici{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.play-dugmici{
+display: flex;
+
+}
+.play-dugmici div{
+    margin: 5px 20px;
+    color: white;
+
+}
+.zvuk-dugmici{
+    display: flex;
+}
+.zvuk-dugmici div{
+    margin: 5px 20px;
+    color: white;
+}
+.zvuk-dugmici button{
+    border:none ;  
+    border-radius: 50%;
+    font-size: 15px;
+    font-weight: bold;
+    width: 20px;
+    height: 20px;
 }

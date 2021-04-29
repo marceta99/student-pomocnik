@@ -1,4 +1,6 @@
 import React, { useState, useEffect } from 'react';
+import { FaPlusCircle } from 'react-icons/fa';
+
 const Raspored = ({dugmeObavezaID,setDugmeObavezaID}) => {
     const [boja,setBoja] = useState(" ") ; 
 
@@ -10,7 +12,9 @@ function obojiPolje(e) {
           
            case "odmor":
            e.target.style.backgroundColor = "yellow" ;     
-           break ; 
+           
+
+           break ;    
            
            case "ucenje":
             e.target.style.backgroundColor = "red" ;         

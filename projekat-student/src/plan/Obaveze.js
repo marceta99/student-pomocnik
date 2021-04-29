@@ -11,7 +11,7 @@ function kliknuoDugme(e){
 
 return(
     <div>
-         <h1>Select a task</h1>
+         
         
         <div className="obaveze-container">
   
@@ -27,7 +27,7 @@ return(
             
         </div>
 
-        <h3>Add selected task to a schedule</h3>
+        <h3>Izaberi i unesi koje obaveze imas u toku nedelje</h3>
     </div>
 ) ; 
 
