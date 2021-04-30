@@ -281,6 +281,21 @@ a span{
     position: relative;
     z-index: 3;
 }
+.rezim-ucenja{
+    animation: blink 1s linear infinite;
+    color: red;
+}
+@keyframes blink{
+    50%{
+        opacity: 0;
+    }
+    80%{
+        opacity: .5;
+    }
+}
+
+/*
+
 
 /*odavde music player ////////////////////////////////////////////////////////*/
 

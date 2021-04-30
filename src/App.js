@@ -22,7 +22,9 @@ import Muzika from './muzika/Muzika';
 function App() {
  const [prikazToDo,setPrikazToDo] = useState(0) ;  
  const [prikazNedeljniPlan,setPrikazNedeljniPlan] = useState(0) ;
- const [prikazMuzika,setPrikazMuzika] = useState(0) ; 
+ const [prikazMuzika,setPrikazMuzika] = useState(0) ;
+ 
+ const[pokreniRezimUcenja,setPokreniRezimUcenja] = useState(0) ; 
 
 const [audioo,setAudio] = useState(new Audio()) ;
 const [audioo2,setAudio2] = useState(new Audio()) ;
@@ -86,8 +88,11 @@ const webcamRef = useRef(null)
     else {audioo.play() ;} 
   }
   };
+  if(pokreniRezimUcenja===1){
+ // useEffect(()=>{pokreniCoco()},[]);
+     pokreniCoco() ;   
+}
 
-  useEffect(()=>{pokreniCoco()},[]);
 
   const proveraDaLiUci= (objekat)=>{
     
@@ -145,7 +150,8 @@ const webcamRef = useRef(null)
 
         <Dugmad prikazToDo= {prikazToDo} setPrikazToDo={setPrikazToDo} 
          prikazNedeljniPlan={prikazNedeljniPlan} setPrikazNedeljniPlan={setPrikazNedeljniPlan}
-         prikazMuzika={prikazMuzika} setPrikazMuzika={setPrikazMuzika}></Dugmad>
+         prikazMuzika={prikazMuzika} setPrikazMuzika={setPrikazMuzika}
+          setPokreniRezimUcenja={setPokreniRezimUcenja}></Dugmad>
         
         <MainToDo prikazToDo={prikazToDo}></MainToDo>
         
