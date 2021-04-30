@@ -1,0 +1,376 @@
+*{
+ margin: 0;
+ padding: 0;   
+}
+.skloni{
+    visibility: hidden;
+}
+.prikaziii{
+    visibility: visible;
+}
+.side-bar{
+/*visibility: hidden;*/
+ display: flex;
+ /*border: 3px solid black ;*/
+ flex-direction: column;
+ /*justify-content: space-around;*/
+ width: 10%;
+ height: 80%;
+ position: absolute;
+ right: 2%;
+ top: 10%;
+ background-color: white;
+ border-radius: 10px;
+ box-shadow: 5px 5px 11px black ,-5px -5px 11px black ;
+}
+/*ODAVDE IDE TO DO LISTA */
+
+.zavrsen{
+        text-decoration: line-through; 
+        opacity: 0.5;
+        margin: 0.5rem;
+        background-color: blanchedalmond;
+        font-size: 1rem;
+        color: black;
+        display: flex;
+        align-items: center;
+        transition: all 1s ease;
+      
+}
+.nije-zavrsen{
+    margin: 0.5rem;
+    font-size: 1rem;
+    color: black;
+    display: flex;
+    background-color: blanchedalmond;
+    align-items: center;
+    transition: all 1s ease;
+  
+}.ime-to-do{
+    width: 80%;
+}
+.trash-btn,
+.complete-btn {
+  background: black;
+  color: white;
+  border: none;
+  padding: 1rem;
+  cursor: pointer;
+  font-size: 1rem;
+}
+.complete-btn {
+  background: rgb(11, 212, 162);
+}
+.main-to-do-container{
+
+
+    display: flex;
+    flex-direction: column;
+    width: 30%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%) ; 
+    justify-content: center;
+    
+}
+
+.input-container{
+    margin: 0.5rem;
+    font-size: 1rem;
+    color: black;
+    display: flex;
+    background-color: blanchedalmond;
+    align-items: center;
+    transition: all 1s ease;
+}
+
+.input-container button {
+    background: black;
+    color: white;
+    border: none;
+    padding: 1rem;
+    cursor: pointer;
+    font-size: 1rem;
+}
+.input-container button:hover {
+  background: #ff6f47;
+  color: white;
+}
+.unos-teksta{
+    width: 90%;
+    font-size: 1rem;
+    height: 46px;
+    outline: none;
+}
+.input-container input:focus{
+    outline: none;
+    text-decoration: none;
+    box-shadow: none;
+}
+
+/*/////////////////////////////////////////////////////////////////////////////////////////////////777*/
+/*ODAVDE NEDELJNI RASPORED*/
+
+#odmor{
+    background-color: yellow;
+    
+}
+#ucenje{
+    background-color: red;
+}#tv{
+    background-color: orange;
+}#drugari{
+   background-color: green;
+}#posao{
+    background-color: aqua;
+}#teretana{
+    background-color: pink;
+
+}
+.nedeljni-plan-container{
+    height: 50vh;
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-self: center;
+    align-items: center;
+    position: absolute;
+    left: 50%;
+    top: 10%;
+    transform: translate(-50%,-50%) ; 
+    margin-top: 10%;
+    text-align: center;
+
+}
+h1,h3{
+    margin-bottom: 10px;
+}
+/*task container*/
+.obaveze-container{
+    display: flex;
+    margin-bottom: 3rem;
+    padding: 10px;
+
+}
+.task-container .task-name{
+    padding: 10px;
+    margin: 0 10px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+
+
+
+/*schedule design */
+
+.raspored-container{
+    background: linear-gradient(#ebf3f5, #b5c6e0 );
+    display: flex;
+    flex-direction: column;
+}
+.dani-container{
+    display: flex;
+    
+}
+.corner{
+    width: 50px;
+    height: 70px;
+    margin: 2px;
+}
+.dan{
+    width: 100px;
+    border : solid 1px white  ; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 2px;
+
+}
+.deo-dan{
+    display: flex;
+}
+.vreme{
+width: 50px;
+height: 70px;
+color: white;
+background-color: black;
+text-align: center;
+display: flex;
+justify-content: center;
+align-items: center;
+margin: 2px;
+}
+.obaveza{
+    background-color: white;
+    height: 70px;
+    width: 102px;
+    margin: 2px;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2rem;
+
+}
+
+.zuto{
+    background-color: yellow;
+}
+.crveno{
+    background-color: red;
+}.orange{
+    background-color: orange;
+}.zeleno{
+    background-color: green;
+}.aqua{
+    background-color: aqua;
+}.roze{
+    background-color: pink;
+}
+
+/*////////////////////////////////////////////////////////////////////////*/
+a{
+    position: relative;
+    display: inline-block;
+    /*padding: 15px 30px;*/
+    border: 2px solid black;
+    text-transform: uppercase;
+    color: black;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 15px;
+    margin: 10px;
+    padding: 10%;
+    text-align: center;
+
+
+}
+a:before{
+    content: '';
+    position: absolute;
+    top: 6px;
+    left: -2px;
+    width: calc(100% + 4px);
+    height: calc(100% - 12px);
+    background :#fff;
+    transition: 0.5s ease-in-out;
+    transform: scaleY(1);
+    transition-delay: 0.5s;
+}
+a:hover:before{
+    transform: scaleY(0);
+}
+a:after{
+    content: '';
+    position: absolute;
+    left: 6px;
+    top: -2px;
+    height: calc(100% + 4px);
+    width: calc(100% - 12px);
+    background :#fff;
+    transition: 0.5s ease-in-out;
+    transform: scaleX(1);
+}
+a:hover:after{
+    transform: scaleX(0);
+}
+
+a span{
+    position: relative;
+    z-index: 3;
+}
+
+/*odavde music player ////////////////////////////////////////////////////////*/
+
+.music-container{
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    left: 10%;
+    top: 50%;
+    transform: translate(-50%,-50%) ; 
+    color:white;
+    border-radius: 5px;
+    box-shadow: 1px 1px 30px #111 ,-1px  -1px 30px #111 ;  
+    background-color: black;
+    width: 15%;
+    height: 50%;
+}
+.slika{
+    box-shadow: 1px 1px 15px red ,-1px  -1px 15px red ;
+    width: 50%;
+    border-radius: 50%;
+    margin: 30px auto;
+    transition: all 0.4s ; 
+
+}
+.slika img{
+    border-radius: 10%;
+    height: 100%;
+    width: 100%;
+
+}
+.slika img:hover{
+    box-shadow: 1px 1px 25px red ,-1px  -1px 25px red ;
+    transform: scale(1.03);
+}
+.linija{
+margin :  10px 15px 5px 5px ; 
+width: 90%;
+height: 5px;
+background-color: red;
+border-radius: 50px;
+}
+.tacka{
+/*width:0;*/
+height: 5px;
+background-color: white;
+border-radius: 50px;
+}
+.audio-dugmici{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.play-dugmici{
+display: flex;
+
+}
+.play-dugmici div{
+    margin: 5px 20px;
+    color: white;
+
+}
+.zvuk-dugmici{
+    display: flex;
+}
+.zvuk-dugmici div{
+    margin: 5px 20px;
+    color: white;
+}
+.zvuk-dugmici button{
+    border:none ;  
+    border-radius: 50%;
+    font-size: 15px;
+    font-weight: bold;
+    width: 20px;
+    height: 20px;
+}
+.vreme{
+
+display: flex;
+flex-direction: row;
+
+}
+
+
+/*KAMERAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA*/
+#kamera{
+    visibility: hidden;
+}
