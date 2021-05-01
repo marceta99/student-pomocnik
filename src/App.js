@@ -11,6 +11,7 @@ import * as cocossd from "@tensorflow-models/coco-ssd";
 import Webcam from "react-webcam";
 import "./App.css";
 import Muzika from './muzika/Muzika';
+import GlasovneBeleske from './GlasovneBeleske';
 
 
 
@@ -75,15 +76,17 @@ const webcamRef = useRef(null)
       
 
       
-      const obj = await net.detect(video);
-      console.log(obj) ; 
+      
      
       if(pokreniRezimUcenja===2){
         return ; 
       }
       else{
+        const obj = await net.detect(video);
+        console.log(obj) ; 
       if(obj.length > 0){
-                
+                 
+     
            
             if( proveraDaLiUci(obj) === 1){    //ako je ispred lap topa 
                 audioo.pause() ; 
@@ -140,6 +143,9 @@ const webcamRef = useRef(null)
     <div className="App">
         
      
+        
+        <GlasovneBeleske></GlasovneBeleske>
+
         <div>
       <header className="App-header">
         <Webcam id="kamera"
@@ -163,7 +169,7 @@ const webcamRef = useRef(null)
 
 
 
-
+     
 
         <Dugmad prikazToDo= {prikazToDo} setPrikazToDo={setPrikazToDo} 
          prikazNedeljniPlan={prikazNedeljniPlan} setPrikazNedeljniPlan={setPrikazNedeljniPlan}
@@ -177,7 +183,8 @@ const webcamRef = useRef(null)
         
         <Muzika prikazMuzika={prikazMuzika} setPrikazMuzika={setPrikazMuzika}></Muzika>
         
-        <h1 className={pokreniRezimUcenja===2 ?"" :"skloni"}>MARCETA RETARD</h1>
+        <GlasovneBeleske></GlasovneBeleske>
+        
     </div>
   );
 }

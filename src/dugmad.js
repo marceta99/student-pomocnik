@@ -46,7 +46,7 @@ if(prikazToDo === 1){
       clearInterval(intervalId);
     }*/
 
-    //e.target.classList.toggle("rezim-ucenja") ;
+    e.target.classList.toggle("rezim-ucenja") ;
   }
   const prekiniRezim=()=>{
     clearInterval(intervalId);

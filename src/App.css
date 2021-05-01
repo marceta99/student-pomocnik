@@ -1,6 +1,8 @@
 *{
  margin: 0;
  padding: 0;   
+}.App{
+
 }
 .skloni{
     visibility: hidden;
@@ -396,5 +398,41 @@ flex-direction: row;
 
 /*KAMERAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA*/
 #kamera{
-    /*visibility: hidden;*/
+    visibility: hidden;
 }
+
+/*GLASOVNE BELESKE ////////////////////////////////////////////////*/
+
+.beleske-container {
+    margin: 20px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    margin-top: 50px;
+    width: 50%;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%) ; 
+    
+  }
+  
+.box{
+    box-shadow: -4px 10px 35px -1px rgba(0, 0, 0, 0.75);
+    min-height: 20rem;
+    margin: 10px;
+    margin-right: 10px;
+    padding: 20px;
+    border-radius: 5px;
+    background-color: blanchedalmond;
+    
+  }
+  
+  
+  
+ .dugme-beleske{
+    float: right;
+    margin: 10px;
+    padding: 10px;
+    border-radius: 5px;
+    background: transparent;
+  }
