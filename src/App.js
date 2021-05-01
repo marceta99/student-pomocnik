@@ -32,23 +32,34 @@ const [audioo2,setAudio2] = useState(new Audio()) ;
 audioo.src = "/sirena.mp3"  ;  
 audioo2.src = "/telefon.mp3" ; 
 
-
-
+//const [intervalId,setIntervalId] = useState(0) ; 
+var intervalId ; 
 const webcamRef = useRef(null)
  
 
  
   const pokreniCoco = async () => {
+    
+    
     const net = await cocossd.load();
     console.log("coco se loadovao");
-   
-    setInterval(() => {
-      detektuj(net);
-    }, 10);
-  };
+    
+    /*if(pokreniRezimUcenja%2 === 0){
+      setPrekini(1) ;   
+      return 0 ; */
+      
+    intervalId = setInterval(() => {
+
+          console.log("pocelo detektovanje") ; 
+          detektuj(net);
+    }, 10)  ; 
+    
+};
 
   const detektuj = async (net) => {
-   
+    if(pokreniRezimUcenja === 1){
+      
+    
     if (
       typeof webcamRef.current !== "undefined" &&
       webcamRef.current !== null 
@@ -67,6 +78,10 @@ const webcamRef = useRef(null)
       const obj = await net.detect(video);
       console.log(obj) ; 
      
+      if(pokreniRezimUcenja===2){
+        return ; 
+      }
+      else{
       if(obj.length > 0){
                 
            
@@ -87,11 +102,13 @@ const webcamRef = useRef(null)
     }
     else {audioo.play() ;} 
   }
-  };
-  if(pokreniRezimUcenja===1){
- // useEffect(()=>{pokreniCoco()},[]);
-     pokreniCoco() ;   
 }
+} };
+
+  if(pokreniRezimUcenja === 1){
+    pokreniCoco() ;  
+  } 
+ 
 
 
   const proveraDaLiUci= (objekat)=>{
@@ -151,7 +168,8 @@ const webcamRef = useRef(null)
         <Dugmad prikazToDo= {prikazToDo} setPrikazToDo={setPrikazToDo} 
          prikazNedeljniPlan={prikazNedeljniPlan} setPrikazNedeljniPlan={setPrikazNedeljniPlan}
          prikazMuzika={prikazMuzika} setPrikazMuzika={setPrikazMuzika}
-          setPokreniRezimUcenja={setPokreniRezimUcenja}></Dugmad>
+          setPokreniRezimUcenja={setPokreniRezimUcenja} pokreniRezimUcenja={pokreniRezimUcenja}
+          intervalId={intervalId}></Dugmad>
         
         <MainToDo prikazToDo={prikazToDo}></MainToDo>
         
@@ -159,6 +177,7 @@ const webcamRef = useRef(null)
         
         <Muzika prikazMuzika={prikazMuzika} setPrikazMuzika={setPrikazMuzika}></Muzika>
         
+        <h1 className={pokreniRezimUcenja===2 ?"" :"skloni"}>MARCETA RETARD</h1>
     </div>
   );
 }

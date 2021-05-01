@@ -1,12 +1,17 @@
 import React, { useState, useEffect } from 'react';
 const Obaveze = ({dugmeObavezaID,setDugmeObavezaID}) => {
 
+const [toogleObaveze,setToggleObaveze] = useState(0) ; 
+const [brojac,setBrojac] = useState(0) ; 
+
     
 
 
 function kliknuoDugme(e){
+    
     setDugmeObavezaID(e.target.id) ;
-    console.log(dugmeObavezaID) ;  
+    console.log(e) ; 
+    e.target.classList.add("kliknuta-obaveza") ;   
 }
 
 return(
@@ -17,7 +22,7 @@ return(
   
             <button className="obaveza" id="odmor" onClick={e=>kliknuoDugme(e)}  >odmor</button>
             <button className="obaveza" id="ucenje" onClick={e=>kliknuoDugme(e)}  >ucenje</button>
-            <button className="obaveza" id="tv" onClick={e=>kliknuoDugme(e)}>tv</button>
+            <button className="obaveza" id="skola" onClick={e=>kliknuoDugme(e)}>skola</button>
             <button className="obaveza" id="drugari" onClick={e=>kliknuoDugme(e)} >drugari</button>
             <button className="obaveza" id="posao"onClick={e=>kliknuoDugme(e)} >posao</button>
             <button className="obaveza" id="teretana"  onClick={e=>kliknuoDugme(e)}>teretana</button>
@@ -27,7 +32,7 @@ return(
             
         </div>
 
-        <h3>Izaberi i unesi koje obaveze imas u toku nedelje</h3>
+        
     </div>
 ) ; 
 

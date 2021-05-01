@@ -1,7 +1,7 @@
 import React,{useState} from "react" ;
 
 const Dugmad = ({setPrikazToDo,prikazToDo,prikazNedeljniPlan,setPrikazNedeljniPlan,
-  prikazMuzika,setPrikazMuzika,setPokreniRezimUcenja}) =>{
+  prikazMuzika,setPrikazMuzika,setPokreniRezimUcenja,pokreniRezimUcenja,intervalId}) =>{
 
     const [pritisnutRezim,setPritisnutRezim] =useState(0) ;  
 const skloniIliPrikaziToDo = ()=>{
@@ -38,13 +38,29 @@ if(prikazToDo === 1){
    /* e.target.style.boxShadow="0 0 100px #21ebff,0 0 100px #28ebff" ;  
     e.target.style.transitionDelay="0.5s" ; */
     setPokreniRezimUcenja(1) ;
-    setPritisnutRezim(1) ; 
+    console.log("pritinut rezimje : "+pokreniRezimUcenja)  ;
+  
+    
+ /*   if(pokreniRezimUcenja !== 0 && (pokreniRezimUcenja%2 === 0)){
+      console.log("JESTE MODUUO OD NULEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE") ; 
+      clearInterval(intervalId);
+    }*/
+
+    //e.target.classList.toggle("rezim-ucenja") ;
+  }
+  const prekiniRezim=()=>{
+    clearInterval(intervalId);
+    setPokreniRezimUcenja(2) ;
+   console.log("PREKINI REZIM :"+pokreniRezimUcenja) ; 
+
   }
 return(
     
       <div className="side-bar">
-        <a  href="#" onClick={toogleDugme} className={ (pritisnutRezim===1) ? "rezim-ucenja": ""}
+        <a  href="#" onClick={toogleDugme}  
         ><span>Mod Ucenje</span></a>
+         <a  href="#" className={(pokreniRezimUcenja===1) ?"ugasi-rezim":"skloni"} onClick={prekiniRezim}  
+        ><span>Ugasi</span></a>
 
         <a  href="#" onClick={skloniIliPrikaziToDo}><span>To Do</span></a>    
 

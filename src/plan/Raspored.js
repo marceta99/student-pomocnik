@@ -12,28 +12,35 @@ function obojiPolje(e) {
           
            case "odmor":
            e.target.style.backgroundColor = "yellow" ;     
-           
+           e.target.textContent = "odmor" ;  
 
            break ;    
            
            case "ucenje":
-            e.target.style.backgroundColor = "red" ;         
+            e.target.style.backgroundColor = "red" ; 
+            e.target.textContent = "ucenje" ;          
             break ; 
             
-            case "tv":
-                e.target.style.backgroundColor = "orange" ;         
+            case "skola":
+                e.target.style.backgroundColor = "orange" ; 
+                e.target.textContent = "skola" ;          
                 break ; 
            
            case "drugari":
-            e.target.style.backgroundColor = "green" ;         
+            e.target.style.backgroundColor = "green" ; 
+            e.target.textContent = "drugari" ;  
+
+
             break ;  
            
            case "posao":
-            e.target.style.backgroundColor = "aqua" ;        
+            e.target.style.backgroundColor = "aqua" ;       
+            e.target.textContent = "posao" ;   
             break ;
            
            case "teretana":
-            e.target.style.backgroundColor = "pink" ;         
+            e.target.style.backgroundColor = "pink" ;    
+            e.target.textContent = "teretana" ;       
             break ;
          
        
@@ -44,13 +51,13 @@ return(
     <div className="raspored-container">
         <div className="dani-container">
             <span className="corner"></span>
-                    <div className="dan">Monday</div>
-                    <div className="dan">Tuesday</div>
-                    <div className="dan">Wednesday</div>
-                    <div className="dan">thursday</div>
-                    <div className="dan">Friday</div>
-                    <div className="dan">Saturday</div>
-                    <div className="dan">Sunday</div>
+                    <div className="dan">Ponedeljak</div>
+                    <div className="dan">Utorak</div>
+                    <div className="dan">Sreda</div>
+                    <div className="dan">Četvrtak</div>
+                    <div className="dan">Petak</div>
+                    <div className="dan">Subota</div>
+                    <div className="dan">Nedelja</div>
         </div>
 
             <div className="deo-dan">

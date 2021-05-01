@@ -118,7 +118,7 @@
 }
 #ucenje{
     background-color: red;
-}#tv{
+}#skola{
     background-color: orange;
 }#drugari{
    background-color: green;
@@ -129,8 +129,8 @@
 
 }
 .nedeljni-plan-container{
-    height: 50vh;
-    width: 50%;
+    height: 40vh;
+    width: 40%;
     display: flex;
     flex-direction: column;
     justify-self: center;
@@ -139,9 +139,9 @@
     left: 50%;
     top: 10%;
     transform: translate(-50%,-50%) ; 
-    margin-top: 10%;
+    margin-top: 5%;
     text-align: center;
-
+    
 }
 h1,h3{
     margin-bottom: 10px;
@@ -149,7 +149,7 @@ h1,h3{
 /*task container*/
 .obaveze-container{
     display: flex;
-    margin-bottom: 3rem;
+    margin-bottom: 20px;
     padding: 10px;
 
 }
@@ -211,8 +211,9 @@ margin: 2px;
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 2rem;
-
+    font-size: 20px;
+    border-radius: 10px;
+    box-shadow: 1px 1px 10px #111 ,-1px  -1px 10px #111 ;  
 }
 
 .zuto{
@@ -281,6 +282,10 @@ a span{
     position: relative;
     z-index: 3;
 }
+.kliknuta-obaveza{
+    animation: blink 1s linear ;
+    animation-duration: 1s;
+}
 .rezim-ucenja{
     animation: blink 1s linear infinite;
     color: red;
@@ -294,6 +299,10 @@ a span{
     }
 }
 
+.ugasi-rezim{
+
+    visibility: visible;
+}
 /*
 
 
@@ -387,5 +396,5 @@ flex-direction: row;
 
 /*KAMERAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA*/
 #kamera{
-    visibility: hidden;
+    /*visibility: hidden;*/
 }
