@@ -84,7 +84,7 @@
     display: flex;
     background-color: blanchedalmond;
     align-items: center;
-    transition: all 1s ease;
+    /*transition: all 1s ease;*/
 }
 
 .input-container button {
@@ -417,6 +417,9 @@ flex-direction: row;
   }
   
 .box{
+    display: flex;
+    flex-direction: column;
+   
     box-shadow: -4px 10px 35px -1px rgba(0, 0, 0, 0.75);
     min-height: 20rem;
     margin: 10px;
@@ -427,12 +430,51 @@ flex-direction: row;
     
   }
   
-  
+  .dugmici-cont{
+      display: flex;
+  }
   
  .dugme-beleske{
-    float: right;
+    
     margin: 10px;
     padding: 10px;
     border-radius: 5px;
     background: transparent;
+    
   }
+.unos{
+    width: 100%;
+    font-size: 1rem;
+    height: 46px;
+    outline: none;
+    
+}.tekst-container{
+    width: 95%;
+    display: flex;
+    margin-top: 20%;
+    flex-direction: column;
+}.tekst-container h2{
+    margin-bottom: 10px;
+}
+  /* ////////////////////////////////////////////////////////////*/
+
+  #logo{
+      width: 100px;
+      height: 100px;
+      color: white;
+  }
+  #logo:hover{
+    transition: all 2s linear;
+    transform: rotateY(360deg);
+ 
+ }
+ .logo-pomera{
+    transition: all 8s linear;
+    transform: rotateY(360deg);
+    color: red;
+ }
+ .famic{
+    font-size: 20px;
+    animation: blink 1s linear infinite;
+    color: red;
+}

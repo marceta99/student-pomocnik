@@ -12,6 +12,7 @@ import Webcam from "react-webcam";
 import "./App.css";
 import Muzika from './muzika/Muzika';
 import GlasovneBeleske from './GlasovneBeleske';
+import StudentkoGlas from './StudentkoGlas';
 
 
 
@@ -24,6 +25,8 @@ function App() {
  const [prikazToDo,setPrikazToDo] = useState(0) ;  
  const [prikazNedeljniPlan,setPrikazNedeljniPlan] = useState(0) ;
  const [prikazMuzika,setPrikazMuzika] = useState(0) ;
+ const [prikazBeleske,setBeleske] = useState(0) ;
+
  
  const[pokreniRezimUcenja,setPokreniRezimUcenja] = useState(0) ; 
 
@@ -143,7 +146,7 @@ const webcamRef = useRef(null)
     <div className="App">
         
      
-        
+        <StudentkoGlas></StudentkoGlas>
         <GlasovneBeleske></GlasovneBeleske>
 
         <div>
@@ -175,7 +178,7 @@ const webcamRef = useRef(null)
          prikazNedeljniPlan={prikazNedeljniPlan} setPrikazNedeljniPlan={setPrikazNedeljniPlan}
          prikazMuzika={prikazMuzika} setPrikazMuzika={setPrikazMuzika}
           setPokreniRezimUcenja={setPokreniRezimUcenja} pokreniRezimUcenja={pokreniRezimUcenja}
-          intervalId={intervalId}></Dugmad>
+          intervalId={intervalId} prikazBeleske={prikazBeleske} setBeleske={setBeleske}></Dugmad>
         
         <MainToDo prikazToDo={prikazToDo}></MainToDo>
         
@@ -183,7 +186,7 @@ const webcamRef = useRef(null)
         
         <Muzika prikazMuzika={prikazMuzika} setPrikazMuzika={setPrikazMuzika}></Muzika>
         
-        <GlasovneBeleske></GlasovneBeleske>
+        <GlasovneBeleske prikazBeleske={prikazBeleske}></GlasovneBeleske>
         
     </div>
   );

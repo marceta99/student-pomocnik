@@ -7,27 +7,29 @@ const SpeechRecognition = window.SpeechRecognition  ||  window.webkitSpeechRecog
 
 const recognition = new SpeechRecognition() ; //mic
 
-recognition.lang="en-US" ;//probao sam sa srpskim ali nazalost ne prepoznaje ga (niti bosansim,hrtvatski...)
-/*recognition.continuous = true ;  
-recognition.interimResults = true ;*/
+recognition.lang="sr-Serbian" ;
+recognition.continuous = true ;  
+recognition.interimResults = true ;
 
 
 
-const GlasovneBeleske = () => {
+const GlasovneBeleske = ({prikazBeleske}) => {
 
-const [isListening,setIsListening] = useState(false) ;
-const [note,setNote] = useState(null) ;
-const [savedNotes,setSavedNotes] = useState([]) ;
-
+const [snima,setSnima] = useState(false) ;
+const [usmeneBeleske,setUsmeneBeleske] = useState(null) ;
+const [sacuvaneBeleske,setSacuvaneBeleske] = useState([]) ;
+const [pisaneBeleske,setPisaneBeleske] = useState(null) ;
 
 const handleListen = ()=>{
-    if(isListening){
+    if(snima){
         recognition.start() ;      //ako je pritsnuto dugme onda kreni sa snimanjem zvuka
         console.log("krenulo je snimanje zvuka") ; 
         recognition.onresult=(e)=>{
             const izgovorenTekst = e.results[0][0].transcript ;
-            setNote(izgovorenTekst) ; 
+            setUsmeneBeleske(izgovorenTekst) ; 
             console.log(izgovorenTekst) ; 
+
+
         }
 
 
@@ -39,30 +41,55 @@ const handleListen = ()=>{
 
 useEffect(()=>{
   handleListen() ;  
-},[isListening]);
+},[snima]);
 
 const handleSaveNote =()=>{
-    setSavedNotes([...savedNotes,note]) ;
-    setNote("") ;  
+    setSacuvaneBeleske([...sacuvaneBeleske,usmeneBeleske]) ;
+    setUsmeneBeleske("") ;  
 }
+
+    const inputHandler = (e)=>{
+        console.log(e.target.value) ;
+       
+       setPisaneBeleske(e.target.value) ;    
+    }
+    const submitHandler = (e)=>{
+        e.preventDefault() ; 
+        setSacuvaneBeleske([...sacuvaneBeleske, usmeneBeleske, pisaneBeleske]) ;
+        
+    }
+
+
     
 return(
-    <div className="beleske-container">
+    <div className={(prikazBeleske ===1) ? "beleske-container": "skloni"} >
         <div className="box">
-            <h2>Trenutna Beleska</h2>
-            {isListening ?<FaMicrophone></FaMicrophone> : <FaMicrophoneSlash></FaMicrophoneSlash>  }
+        <form >
+            <h2>Glasovne beleske</h2>
 
-            <button  onClick={handleSaveNote} className="dugme-beleske">Sacuvaj beleske</button>
+            {snima ?<FaMicrophone className="famic"></FaMicrophone> : <FaMicrophoneSlash></FaMicrophoneSlash>  }
+           <div className="dugmici-cont">
+            <button  onClick={(e)=>{
+                handleSaveNote() ;
+                submitHandler(e) ; 
+            }
+                } className="dugme-beleske" type="submit">Sacuvaj beleske</button>
 
-            <button  onClick={()=> setIsListening(prevState => !prevState )} 
+            <button  onClick={()=> setSnima(prevState => !prevState )} 
             className="dugme-beleske"> Pokreni/Stop</button>
+            </div>
             
-            <p>{note}</p>
+            <p>{usmeneBeleske}</p>
+            <div className="tekst-container">
+                <h2>Tekstualne beleske</h2>
+                <input type="text" placeholder="unesi belesku" onChange={inputHandler} className="unos"></input>
+            </div>
+         </form>
         </div>
         <div className="box">
             <h2>Beleske</h2>
-            {savedNotes.map(note => (
-                <p key={note}> {note} </p>
+            {sacuvaneBeleske.map(usmeneBeleske => (
+                <p key={Math.random()}> {usmeneBeleske} </p>
             ))}  
           
         </div>

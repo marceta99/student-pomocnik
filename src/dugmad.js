@@ -1,7 +1,8 @@
 import React,{useState} from "react" ;
 
 const Dugmad = ({setPrikazToDo,prikazToDo,prikazNedeljniPlan,setPrikazNedeljniPlan,
-  prikazMuzika,setPrikazMuzika,setPokreniRezimUcenja,pokreniRezimUcenja,intervalId}) =>{
+  prikazMuzika,setPrikazMuzika,setPokreniRezimUcenja,pokreniRezimUcenja,intervalId,
+  prikazBeleske,setBeleske}) =>{
 
     const [pritisnutRezim,setPritisnutRezim] =useState(0) ;  
 const skloniIliPrikaziToDo = ()=>{
@@ -22,6 +23,7 @@ if(prikazToDo === 1){
       setPrikazNedeljniPlan(0) ; 
     }else if(prikazNedeljniPlan=== 0){
       setPrikazNedeljniPlan(1) ; 
+      setBeleske(0) ;
       setPrikazToDo(0) ; 
     }
   }
@@ -54,6 +56,15 @@ if(prikazToDo === 1){
    console.log("PREKINI REZIM :"+pokreniRezimUcenja) ; 
 
   }
+  const skloniIliPrikaziBeleske= ()=>{
+    if(prikazBeleske=== 1){
+      setBeleske(0) ;
+    }else if(prikazNedeljniPlan=== 0){
+      setBeleske(1) ; 
+      setPrikazNedeljniPlan(0) ; 
+      setPrikazToDo(0) ; 
+    }
+  }
 return(
     
       <div className="side-bar">
@@ -67,6 +78,9 @@ return(
         <a  href="#" onClick={skloniIliPrikaziPlan}><span>Nedeljni Plan</span></a>     
         
         <a  href="#" onClick={skloniIliPrikaziMuziku}><span>Muzika</span></a>  
+
+        <a  href="#" onClick={skloniIliPrikaziBeleske}><span>Beleske</span></a>  
+
              
         
         
