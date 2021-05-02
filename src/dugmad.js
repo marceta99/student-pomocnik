@@ -14,6 +14,7 @@ if(prikazToDo === 1){
  else if(prikazToDo === 0){
  setPrikazToDo(1);   
  setPrikazNedeljniPlan(0) ;  
+ setBeleske(0) ;
  }
 
 }
@@ -25,6 +26,7 @@ if(prikazToDo === 1){
       setPrikazNedeljniPlan(1) ; 
       setBeleske(0) ;
       setPrikazToDo(0) ; 
+      setPrikazMuzika(0) ;
     }
   }
   const skloniIliPrikaziMuziku= () =>{
@@ -32,7 +34,11 @@ if(prikazToDo === 1){
       setPrikazMuzika(0) ; 
     }
     else {
-      setPrikazMuzika(1) ; 
+      setPrikazMuzika(1) ;
+      setPrikazNedeljniPlan(0) ; 
+      setBeleske(0) ;
+      setPrikazToDo(0) ; 
+
     }
   }
   const toogleDugme=(e) =>{
@@ -54,12 +60,13 @@ if(prikazToDo === 1){
     clearInterval(intervalId);
     setPokreniRezimUcenja(2) ;
    console.log("PREKINI REZIM :"+pokreniRezimUcenja) ; 
+   window.location.reload();
 
   }
   const skloniIliPrikaziBeleske= ()=>{
     if(prikazBeleske=== 1){
       setBeleske(0) ;
-    }else if(prikazNedeljniPlan=== 0){
+    }else if(prikazBeleske=== 0){
       setBeleske(1) ; 
       setPrikazNedeljniPlan(0) ; 
       setPrikazToDo(0) ; 
@@ -68,10 +75,8 @@ if(prikazToDo === 1){
 return(
     
       <div className="side-bar">
-        <a  href="#" onClick={toogleDugme}  
-        ><span>Mod Ucenje</span></a>
-         <a  href="#" className={(pokreniRezimUcenja===1) ?"ugasi-rezim":"skloni"} onClick={prekiniRezim}  
-        ><span>Ugasi</span></a>
+          
+          
 
         <a  href="#" onClick={skloniIliPrikaziToDo}><span>To Do</span></a>    
 
@@ -81,7 +86,11 @@ return(
 
         <a  href="#" onClick={skloniIliPrikaziBeleske}><span>Beleske</span></a>  
 
-             
+        <a  href="#" onClick={toogleDugme}  
+        ><span>Mod Ucenje</span></a>
+         <a  href="#" className={(pokreniRezimUcenja===1) ?"ugasi-rezim":"skloni"} onClick={prekiniRezim}  
+        ><span>Ugasi</span></a>
+        
         
         
       </div>

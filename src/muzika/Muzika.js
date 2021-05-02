@@ -42,7 +42,7 @@ const Muzika  = ({prikazMuzika}) => {
    const [sekunde,setSekunde] = useState(0) ;
    const [ukupniMinuti,setUkupniMinuti] = useState(0) ;  
    const [ukupnesekunde,setUkupneSekunde] = useState(0) ;  
-
+   
    function unesiVremeTrajanja(sec){
 
     setMinuti(Math.floor(sec/60)) ; //ovo floor ce da zaokzuri npr ako imamo 2.54 minuta na 2 minuta 
@@ -56,21 +56,22 @@ const Muzika  = ({prikazMuzika}) => {
         setUkupneSekunde(sec%60)  ;  
    }
    function sledecaPesma(){
-        const x = indexPesme +1 ; 
-       setIndexPesme(x) ;   
+       setX(1) ; 
+       setIndexPesme(proslaVrednost=> proslaVrednost + 1) ;   
        if(indexPesme > 1){
         setIndexPesme(0) ; 
         audio.src= pesme[indexPesme] ;  
         audio.play() ; 
        }else {
        
-       audio.src= pesme[indexPesme] ;  
-       audio.play() ; 
+       /*audio.src= pesme[indexPesme] ;  
+       audio.play() ;*/
+       tooglePustiPauziraj() ;  
        }
 
    }
    function proslaPesma(){
-    setIndexPesme(indexPesme-1) ;   
+    setIndexPesme(proslaVrednost=> proslaVrednost - 1) ;   
     if(indexPesme<0){
      setIndexPesme(2) ; 
     }
@@ -82,13 +83,14 @@ const Muzika  = ({prikazMuzika}) => {
 }
 return(
     <div className={(prikazMuzika ===1) ? "music-container": "skloni" }>
+         <h4 id="mm">Muzika za ucenje</h4>
 
         <div className="slika"> 
             <img src={`${slike[indexPesme]}`} id="slike"></img>
         </div>
         
         <div>
-        <h4>{indexPesme}</h4>
+     
         <h4>{imenaPesama[indexPesme]}</h4>
 
         
@@ -99,20 +101,21 @@ return(
         </div>
 
         <div className="vreme">
-                {`${minuti}:${sekunde}`}&nbsp;{`${ukupniMinuti}:${ukupnesekunde}`}
+                {`${minuti}:${sekunde}`}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{`${ukupniMinuti}min:${ukupnesekunde}sec`}
+                
         </div>
 
     
 
         <div className="audio-dugmici">
            <div className="play-dugmici">
-                 <div onClick={proslaPesma} ><FaBackward ></FaBackward></div>
+                 <div onClick={proslaPesma} ><FaBackward className="pesme" ></FaBackward></div>
 
                 <div className="pusti-stopiraj" onClick={tooglePustiPauziraj}>
-                    {x===0 ? <FaPlay></FaPlay> : <FaPause></FaPause>}
+                    {x===0 ? <FaPlay className="pesme"></FaPlay> : <FaPause className="pesme"></FaPause>}
                     </div>
 
-                 <div onClick={sledecaPesma}><FaForward></FaForward></div>
+                 <div onClick={sledecaPesma}><FaForward className="pesme"></FaForward></div>
             </div>
 
         </div>

@@ -11,7 +11,7 @@ onoStoHocemoDaSeIzgovori.lang="sr-Serbian" ;
 //recognition.interimResults = true ;
 recognition.lang="sr-Serbian" ;
 //window.speechSynthesis.speak(onoStoHocemoDaSeIzgovori) ; 
-const StudentkoGlas = () => {
+const StudentkoGlas = ({setBeleske,setPrikazNedeljniPlan,setPrikazMuzika, setPrikazToDo}) => {
     const [snima,setSnima] = useState(false) ; 
     
 
@@ -25,7 +25,6 @@ const StudentkoGlas = () => {
                 const izgovorenTekst = e.results[0][0].transcript ;
                 console.log(izgovorenTekst) ; 
                
-
 
                 if(izgovorenTekst.includes("sati")){
                     const vreme= new Date() ; 
@@ -46,8 +45,31 @@ const StudentkoGlas = () => {
                 else if(izgovorenTekst.includes("mrzi me ")){
                     const audioo2 = new Audio("/uci.mp3") ; 
                     audioo2.play() ; 
+                } else if(izgovorenTekst.includes("vic")){
+                    const audioo2 = new Audio("/vic.mp3") ; 
+                    audioo2.play() ; 
                 }
-
+                else if(izgovorenTekst.includes("plan")){
+                    setPrikazNedeljniPlan(1) ; 
+                    setBeleske(0) ;
+                    setPrikazToDo(0) ; 
+                    setPrikazMuzika(0) 
+                }
+                else if(izgovorenTekst.includes("beleške")){
+                    setPrikazNedeljniPlan(0) ; 
+                    setBeleske(1) ;
+                    setPrikazToDo(0) ; 
+                    setPrikazMuzika(0) 
+                }
+                else if(izgovorenTekst.includes("muzika")){
+                    setPrikazNedeljniPlan(0) ; 
+                    setBeleske(0) ;
+                    setPrikazToDo(0) ; 
+                    setPrikazMuzika(1) 
+                }
+          
+          
+ 
 
 
             }

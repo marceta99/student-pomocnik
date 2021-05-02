@@ -52,7 +52,7 @@ const webcamRef = useRef(null)
       setPrekini(1) ;   
       return 0 ; */
       
-    intervalId = setInterval(() => {
+     setInterval(() => {
 
           console.log("pocelo detektovanje") ; 
           detektuj(net);
@@ -61,7 +61,7 @@ const webcamRef = useRef(null)
 };
 
   const detektuj = async (net) => {
-    if(pokreniRezimUcenja === 1){
+    //if(pokreniRezimUcenja === 1){
       
     
     if (
@@ -81,10 +81,8 @@ const webcamRef = useRef(null)
       
       
      
-      if(pokreniRezimUcenja===2){
-        return ; 
-      }
-      else{
+      
+      
         const obj = await net.detect(video);
         console.log(obj) ; 
       if(obj.length > 0){
@@ -107,9 +105,10 @@ const webcamRef = useRef(null)
       
     }
     else {audioo.play() ;} 
-  }
+  
 }
-} };
+  //}
+ };
 
   if(pokreniRezimUcenja === 1){
     pokreniCoco() ;  
@@ -146,9 +145,7 @@ const webcamRef = useRef(null)
     <div className="App">
         
      
-        <StudentkoGlas></StudentkoGlas>
-        <GlasovneBeleske></GlasovneBeleske>
-
+      
         <div>
       <header className="App-header">
         <Webcam id="kamera"
@@ -162,14 +159,17 @@ const webcamRef = useRef(null)
             right: 0,
             textAlign: "center",
             zindex: 9,
-            width: 640,
-            height: 480,
+            width: 500,
+            height: 380,
           }}
         />
 
       </header>
     </div>
 
+        <StudentkoGlas setBeleske={setBeleske} setPrikazNedeljniPlan={setPrikazNedeljniPlan}
+        setPrikazMuzika={setPrikazMuzika}  setPrikazToDo={setPrikazToDo}></StudentkoGlas>
+        <GlasovneBeleske></GlasovneBeleske>
 
 
      
