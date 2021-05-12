@@ -1,70 +1,22 @@
-# Getting Started with Create React App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Ova aplikacija ima za cilj da olaksa studentima proces ucenja i da svede na minimum distrakcije tokom ucenja.
 
-## Available Scripts
+Studenti mogu da naprave svoj nedeljni raspored , mogu da dodaju dnevne obaveze i da ih brisu kada ih zavrse
 
-In the project directory, you can run:
+Isto tako studenti mogu da vode beleske o predmetima koje mogu unositi glasovno ili tekstualno.
 
-### `npm start`
+Muzika je veliki deo ucenja svakog studenta tako da ovde mogu na jednom mestu slusaju svoju omiljenu muziku za ucenje
+bez potrebe da ukljucuju telefon i tako sebi ometaju paznju pri ucenju.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+Najbitnija stvar u vezi ove aplikacije je ucenje mod .Ovaj mod se ukljucuje i iskljucuje pritiskom na dugme i kada 
+je ukljucen onda se preko kamere ocitavaju pokreti studenta.Ako student ustane od stolice i ode na primer da gleda 
+TV iskocice sirena koja ce da mu bude znak da se vrati i nastavi da uci.
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+Veliki problem svih studenata je koriscenje telefona tokom ucenja i losa navika da uzmu telefon samo da provere nesto
+i ostanu na njemu narednih pola sata, a da ni ne primete da je proletelo toliko vremena.
+To ova aplikacija sprečava.Čim student uzme telefon u ruke aplikacije ce izbactiti glasovno obavestenje da ostavi telefon
 
-### `npm test`
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Detalje o samoj aplikaciji,na koji nacin radi i koja je njena ideja mozete pogledati na youtube linku ispod
 
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+https://www.youtube.com/watch?v=Nj4R5mrVlGs&ab_channel=MihailoMarcetic
